@@ -1,0 +1,67 @@
+
+body{
+	text-align: center;
+	font-family:sans-serif;
+	margin: 0;
+}
+
+.modal{
+	width: 100%;
+	height: 100vh;
+	background: rgba(0,0,0,0.8);
+	z-index: 99;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: flex;
+
+	animation: modal 1s 1s forwards;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.contenido{
+	margin: auto;
+	width: 38%;
+	height: 97%;
+	background: white;
+	border-radius: 10px;
+
+}
+
+#cerrar{
+	display: none;
+}
+
+#cerrar + label{
+	position: fixed;
+	z-index: 100;
+	line-height: 40px;
+	right: 10px;
+	cursor: pointer;
+
+	animation: modal 2s 2s forwards;
+	visibility: hidden;
+	opacity: 0;
+
+}
+
+#cerrar:checked + label, #cerrar:checked ~ .modal{
+	display: none;
+}
+
+@keyframes modal{
+	100%{
+	visibility: visible;
+	opacity: 1;
+	}
+}
+
+@media screen and (max-width: 800px){
+
+  .contenido{
+	width: 85%;
+	height: 57%  }
+}
